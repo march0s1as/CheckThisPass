@@ -5,6 +5,10 @@ import hashlib
 import requests
 from time import sleep
 import os
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("-p", "--password", help="senha que vc deseja testar")
+args = parser.parse_args()
 # cores aqui.
 fVermelho = "\033[1;31m"
 tVerde = "\033[1;32m"
@@ -50,9 +54,11 @@ def inicio():
   │  ├─┤├┤ │  ├┴┐   │ ├─┤│└─┐  ├─┘├─┤└─┐└─┐
   └─┘┴ ┴└─┘└─┘┴ ┴   ┴ ┴ ┴┴└─┘  ┴  ┴ ┴└─┘└─┘""")
   print(tBranco + "        https://github.com/march0s1as")
+  print(tBranco + "        https://github.com/mateusmansour")
   print(" ")
   sleep(1)
+
 inicio()
-Password = input(tBranco + """Insira a senha
-λ ► """)
+Password = args.password
+
 menu_principal(Password)
