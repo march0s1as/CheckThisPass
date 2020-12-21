@@ -32,12 +32,13 @@ def menu_principal(args):
       sha1pwd, count = senhas(pwd)
       if count:
         inicio()
-        deubom = fVermelho + """[λ] {0} foi identificada com {1} ocorrências. 
-[λ] {2}"""
+        deubom = fVermelho + """┌─ {0} foi identificada com {1} ocorrências.
+└──╼ {2}"""
         print(deubom.format(pwd, count, sha1pwd))
       else:
         inicio()
-        print(tVerde + "[λ] {} não foi encontrada. parabéns! :)".format(pwd))
+        print(tVerde + """┌─ {} não foi encontrada.
+└──╼ https://discord.gg/v5d3PZ9""".format(pwd))
     except UnicodeError:
       erro = sys.exc_info()[1]
       inicio()
@@ -53,6 +54,6 @@ def inicio():
   print(" ")
   sleep(1)
 inicio()
-Password = input(tBranco + """Insira a senha
-λ ► """)
+Password = input(tBranco + """┌─Insira a senha
+└──╼ """)
 menu_principal(Password)
